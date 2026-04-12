@@ -57,6 +57,12 @@
             bindings = <&kp LEFT>;
             key-positions = <24 25>;
         };
+
+        tmux_activate {
+            bindings = <&mo 7>;
+            key-positions = <31 32>;
+            timeout-ms = <50>;
+        };
     };
 
     keymap {
@@ -137,10 +143,5 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        tmux_combo {
-            if-layers = <1 4>;
-            then-layer = <7>;
-        };
     };
 };
