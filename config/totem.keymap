@@ -19,6 +19,48 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    macros {
+        meta_left: meta_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp ESC &kp LEFT>;
+        };
+
+        meta_down: meta_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp ESC &kp DOWN>;
+        };
+
+        meta_up: meta_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp ESC &kp UP>;
+        };
+
+        meta_right: meta_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp ESC &kp RIGHT>;
+        };
+
+        meta_a: meta_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp ESC &kp A>;
+        };
+    };
+
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -140,10 +182,10 @@
 
         tmux {
             bindings = <
-        &trans      &trans  &trans  &trans  &trans          &trans        &trans        &trans      &trans         &trans
-        &kp LA(A)   &trans  &trans  &trans  &trans          &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans
-&trans  &trans      &trans  &trans  &trans  &trans          &trans        &trans        &trans      &trans         &trans  &trans
-                            &trans  &trans  &trans          &trans        &trans        &trans
+        &trans      &trans  &trans  &trans  &trans          &trans       &trans       &trans     &trans        &trans
+        &meta_a     &trans  &trans  &trans  &trans          &meta_left   &meta_down   &meta_up   &meta_right   &trans
+&trans  &trans      &trans  &trans  &trans  &trans          &trans       &trans       &trans     &trans        &trans  &trans
+                            &trans  &trans  &trans          &trans       &trans       &trans
             >;
         };
     };
