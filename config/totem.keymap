@@ -124,14 +124,23 @@
                                            &trans          &trans                &trans       &trans        &trans                 &trans
             >;
         };
+
+        tmux {
+            bindings = <
+        &trans      &trans  &trans  &trans  &trans          &trans        &trans        &trans      &trans         &trans
+        &kp LA(A)   &trans  &trans  &trans  &trans          &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans
+&trans  &trans      &trans  &trans  &trans  &trans          &trans        &trans        &trans      &trans         &trans  &trans
+                            &trans  &trans  &trans          &trans        &trans        &trans
+            >;
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        device {
-            if-layers = <1 1>;
-            then-layer = <1>;
+        tmux_combo {
+            if-layers = <1 4>;
+            then-layer = <7>;
         };
     };
 };
